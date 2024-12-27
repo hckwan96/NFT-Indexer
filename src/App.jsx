@@ -25,7 +25,6 @@ function App() {
   const [error, setError] = useState('');
   const [SearchInfo, setSearchInfo] = useState('');
   
-  console.log(network)
   async function getNFTsForOwner() {
     try
     {
@@ -48,7 +47,6 @@ function App() {
       const alchemy = new Alchemy(config);
       const data = await alchemy.nft.getNftsForOwner(userAddress);
       setResults(data);
-      console.log(network)
       console.log(data)
 
       const tokenDataPromises = data.ownedNfts.map((token) =>
